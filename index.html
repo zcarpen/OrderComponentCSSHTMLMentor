@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- <link rel="stylesheet" href="/style.css" /> -->
+
+    <title>Frontend Mentor | Order summary card</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      html {
+        font-size: 62.5%;
+      }
+
+      body {
+        box-sizing: border-box;
+        width: 100%;
+        font-size: 16px;
+        margin: 0;
+        font-family: "Red Hat Display", sans-serif;
+      }
+
+      .attribution {
+        font-size: 1.1rem;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+      .card {
+        width: 40rem;
+        max-height: 80rem;
+        min-width: 35rem;
+        margin: 20rem 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0rem -1rem 10rem rgba(114, 128, 167, 0.334);
+        overflow: hidden;
+        border-radius: 2rem;
+      }
+
+      .card-background {
+        margin: 0;
+        min-width: 30rem;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: hsl(225, 100%, 94%);
+        background-image: url("./images/pattern-background-desktop.svg");
+        background-size: 100% 45rem;
+        background-repeat: no-repeat;
+        position: relative;
+      }
+
+      .summary {
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 3.2rem;
+        gap: 1.6rem;
+      }
+
+      .img {
+        width: 100%;
+        border-top-right-radius: 1rem;
+        border-top-left-radius: 1rem;
+        height: 100%;
+      }
+      .hero-img {
+        display: inline-block;
+      }
+
+      .summary-heading {
+        margin: 0;
+        font-size: 2.4rem;
+        font-weight: 900;
+        color: #333;
+      }
+
+      .summary-text {
+        text-align: center;
+        color: #999;
+        margin: 0;
+        line-height: 1.6;
+        font-size: 1.5rem;
+      }
+
+      .change {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        width: 100%;
+        background-color: hsl(225, 100%, 98%);
+        padding: 1rem 0;
+        border-radius: 1rem;
+      }
+
+      .plan {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .music-icon {
+        margin: 0.8rem 1rem 0.8rem 1rem;
+      }
+
+      .music-note {
+        width: 4rem;
+        height: 4rem;
+      }
+
+      .plan-name {
+        margin: 0;
+        font-size: 1.3rem;
+        color: #333;
+      }
+
+      .plan-cost {
+        margin: 0;
+        padding-top: 0.4rem;
+        font-size: 1.3rem;
+        color: #999;
+      }
+
+      .btn--change {
+        margin-left: auto;
+        margin-right: 2rem;
+        font-size: 1.3rem;
+        color: hsl(245, 75%, 52%);
+        font-weight: 700;
+      }
+
+      .btn--change:active,
+      .btn--change:hover {
+        color: hsla(245, 75%, 52%, 0.711);
+        font-weight: 900;
+        text-decoration: none;
+      }
+
+      .btn--proceed {
+        width: 100%;
+        background-color: hsla(245, 75%, 52%, 0.923);
+        padding: 1.6rem;
+        border-radius: 1rem;
+        border: none;
+        color: #fff;
+        font-weight: 700;
+        font-size: 1.4rem;
+      }
+
+      .btn--proceed:active,
+      .btn--proceed:hover {
+        cursor: pointer;
+        background-color: hsla(245, 75%, 52%, 0.711);
+      }
+
+      .btn--cancel {
+        border: none;
+        background-color: #fff;
+        font-weight: 700;
+        font-size: 1.4rem;
+        color: #999;
+      }
+
+      .btn--cancel:active,
+      .btn--cancel:hover {
+        cursor: pointer;
+        font-weight: 900;
+      }
+
+      @media (max-width: 1000px) {
+        html {
+          font-size: 55%;
+        }
+
+        .summary-text {
+          font-size: 1.6rem;
+        }
+
+        .plan-cost {
+          padding: 0.8rem;
+        }
+      }
+
+      @media (max-width: 800px) {
+        html {
+          font-size: 55%;
+        }
+      }
+
+      @media (max-width: 500px) {
+        html {
+          font-size: 50%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card-background">
+      <div class="card">
+        <img class="img" src="images/illustration-hero.svg" />
+
+        <section class="summary">
+          <h2 class="summary-heading">Order Summary</h2>
+          <p class="summary-text">
+            You can now listen to millions of songs, audiobooks, and podcasts on
+            any device anywhere you like!
+          </p>
+          <div class="change">
+            <div class="music-icon">
+              <img
+                class="music-note"
+                src="./images/icon-music.svg"
+                alt="music note"
+                srcset=""
+              />
+            </div>
+            <div class="plan">
+              <h3 class="plan-name">Annual Plan</h3>
+              <p class="plan-cost">$59.99/year</p>
+            </div>
+            <a href="#" class="btn--change">Change</a>
+          </div>
+          <button class="btn--proceed">Proceed to Payment</button>
+          <button class="btn--cancel">Cancel Order</button>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>
